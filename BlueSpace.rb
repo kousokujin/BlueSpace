@@ -2,8 +2,11 @@ require "gtk2"
 require "./Oauth.rb"
 require "./Window.rb"
 
+add_act = Add_account.new()
+add_act.get_accsess_window()
 unless File.exists?("token.tkn") then
-  add_act = Add_account.new()
+  add_act.get_accsess_window()
+  add_act.get_accsess_first()
   add_act.get_accsess()
   Gtk.main()
 end
